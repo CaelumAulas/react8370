@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from 'react';
+import classNames from 'classnames'
+
 import Cabecalho from './components/Cabecalho'
 import NavMenu from './components/NavMenu'
 import Dashboard from './components/Dashboard'
@@ -9,7 +11,8 @@ import Tweet from './components/Tweet'
 class Home extends Component {
 
     state = {
-        novoTweet: 'asduhdhuas'
+        novoTweet: 'asduhdhuas',
+        tweets: ['alo alo wbrazil', 'sei la', 'asddasuhhusd']
     }
 
   render() {
@@ -32,7 +35,15 @@ class Home extends Component {
                                 caracteres
                             - Manter a classe css "novoTweet__status"
                         */}
-                            <span className={`
+                            <span className={classNames(
+                                'novoTweet__status',
+                                {
+                                    'novoTweet__status--invalido': this.state.novoTweet.length > 140 
+                                }
+                            )}>
+                                {this.state.novoTweet.length}/140
+                            </span>
+                            {/* <span className={`
                                 novoTweet__status
                                 ${
                                     this.state.novoTweet.length > 140
@@ -41,7 +52,7 @@ class Home extends Component {
                                 }
                                 `}>
                                 {this.state.novoTweet.length}/140
-                            </span>
+                            </span> */}
                             <textarea
                                 onChange={(infosDoEvento) => {
                                     this.setState({
@@ -65,7 +76,13 @@ class Home extends Component {
             <Dashboard posicao="centro">
                 <Widget>
                     <div className="tweetsArea">
-                        <Tweet />
+                        {/* Expressions */}
+                        {
+                            
+                            this.state.tweets.map((tweetAtual, indice) => {
+                                return <Tweet key={indice} conteudo={tweetAtual}/>
+                            })
+                        }
                     </div>
                 </Widget>
             </Dashboard>

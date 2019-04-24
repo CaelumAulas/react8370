@@ -112,6 +112,14 @@ state = {novaMensagem}
     - https://airbnb.design/lottie/ (façam um amigo que manje de after effects)
     - 
 
+## Tcharanam da peformance no React
+- Ajuda o browser a rodar as coisas, somente quando o browser ta livre pra rodar 
+    - requestAnimationFrame()
+        - roda sempre que o browser pode
+- ele só muda o que precisa mudar ao invés de renderizar tudo de novo
+    - Virtual DOM 
+        - é um objeto que o react manipula antes de atualizar o document de verdade
+- Angular usa o Monkey Patch: https://medium.com/reverse-engineering-angular/angular-deep-dive-zone-js-how-does-it-monkey-patches-various-apis-9cc1c7fcc321
 
 
 
