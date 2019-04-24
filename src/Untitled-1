@@ -1,0 +1,15 @@
+## Usuario
+- sempre que o usuário digitar
+    - Caixa de texto
+        - contar os caracteres
+        - deixa ele digitar, mas daremos um warning, bloquear o botão
+
+## Dev
+- adicionar um evento
+    - on change
+
+====
+
+
+- tal do this
+- explicar pq mil renders

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './navMenu.css'
-
 export class NavMenuLogado extends Component {
     render() {
         return (

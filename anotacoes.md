@@ -102,8 +102,15 @@ state = {novaMensagem}
 - https://github.com/alexpate/awesome-design-systems
 - https://storybook.js.org/
 
-
-
+## Animações no Front End
+- https://greensock.com/tweenmax
+- Animar SVG
+    - Draw SVG
+    - SVG Filters
+    - https://tympanus.net/codrops/
+    - https://lhbzr.com/work
+    - https://airbnb.design/lottie/ (façam um amigo que manje de after effects)
+    - 
 
 
 
