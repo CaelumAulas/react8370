@@ -121,7 +121,31 @@ state = {novaMensagem}
         - é um objeto que o react manipula antes de atualizar o document de verdade
 - Angular usa o Monkey Patch: https://medium.com/reverse-engineering-angular/angular-deep-dive-zone-js-how-does-it-monkey-patches-various-apis-9cc1c7fcc321
 
+## Livros
+- Série you don't know JS: https://www.google.com.br/search?q=you+dont+know+js&oq=you+dont+know+js&aqs=chrome..69i57j0l5.1955j0j9&sourceid=chrome&ie=UTF-8
+- Encham de perguntas o leo balter: https://twitter.com/leobalter
+    - https://hipsters.tech/evolucao-e-especificacao-do-javascript-moderno/
+- https://www.amazon.com.br/M%C3%ADtico-Homem-M%C3%AAs-Ensaios-Engenharia-Software/dp/8550802530?tag=goog0ef-20&smid=A1ZZFT5FULY4LN&ascsubtag=go_726685122_54292137521_242594579893_aud-519888259198:pla-843361975152_c_
 
+## Softwares como serviço
+- https://sendgrid.com/marketing/sendgrid-services-cro/?extProvId=5&extPu=49397-gaw&extLi=115523862&sem_adg=5147766942&extCr=5147766942-144426643671&extSi=&extTg=&keyword=sendgrid%20com&extAP=1t1&extMT=b&gclid=CjwKCAjw7_rlBRBaEiwAc23rhkV2E61qHT4wN3A-k3A4iKqtiay0Ul8PQ_FAXLtpZmLkHCtfx80ZcRoCD9IQAvD_BwE
+- https://cloudinary.com/
+- https://www.heroku.com/
+- http://www.setupmyproject.com
+- Como buscar CEP: https://viacep.com.br/ws/<cep da onde vc quer pegar>/json
+- Para não reinventar a roda com validação: https://github.com/jquense/yup
+- Formik: formularios complexos é com ele https://github.com/jaredpalmer/formik
+- https://httpstatusdogs.com/
+
+
+## Dicas de referencias de código
+- https://www.youtube.com/watch?v=xMk2RwdbByM
+- Clean Code
+    - 
+- https://www.casadocodigo.com.br/products/livro-oo-solid
+- https://www.amazon.com.br/Refactoring-Improving-Existing-Addison-Wesley-Signature-ebook/dp/B07LCM8RG2?tag=goog0ef-20&smid=A18CNA8NWQSYHH&ascsubtag=go_1686871380_65779544836_327582895583_aud-580930410671:pla-581169666159_c_
+- 
+- https://www.google.com.br/search?q=vaughn+vernon+implementando+domain-driven+design&stick=H4sIAAAAAAAAAONgFuLRT9c3NDQuqzQtSy5XAvOMjAzNy8wLi7UEHEtLMvKLQvKd8vOz_fNyKhexGpQllqZn5CmUpRbl5ecpZOYW5KTmpuaVJOal5Cuk5OcmZubpphRllqXmKaSkFmem5wEAPZ8OSmMAAAA&sa=X&ved=2ahUKEwjlw6qPkerhAhUhw1kKHanMBQwQxA0wF3oECAsQBA&biw=1024&bih=689
 
 <!-- - Front End 
     - Faz tudo 

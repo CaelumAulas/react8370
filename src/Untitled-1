@@ -11,5 +11,37 @@
 ====
 
 
+# Postar o tweet
+
+- submit de um form com a saida do textarea
+    - aparecer o tweet na tela do Usuario
+    - limpar a caixa do novo tweet 
+    - manter o histórico dos tweets da tela
+    - Mandar o tweet pra API dos tweets
+
+
+======
+
+
+[Performance]
+- tela (render)
+- dados que vão mudar (state)
+- algo que avisa a tela que tudo mudou 
+    - o (setState) chama o render
+
+
+
+{
+    'dadosDinamicos': valor
+}
+
+
+
+
+udashuadshu
+
+
+
+
 - tal do this
 - explicar pq mil renders

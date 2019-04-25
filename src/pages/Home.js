@@ -1,18 +1,29 @@
 import React, { Component, Fragment } from 'react';
 import classNames from 'classnames'
 
-import Cabecalho from './components/Cabecalho'
-import NavMenu from './components/NavMenu'
-import Dashboard from './components/Dashboard'
-import Widget from './components/Widget'
-import TrendsArea from './components/TrendsArea'
-import Tweet from './components/Tweet'
+import Cabecalho from '../components/Cabecalho'
+import NavMenu from '../components/NavMenu'
+import Dashboard from '../components/Dashboard'
+import Widget from '../components/Widget'
+import TrendsArea from '../components/TrendsArea'
+import Tweet from '../components/Tweet'
 
 class Home extends Component {
 
     state = {
         novoTweet: 'asduhdhuas',
         tweets: ['alo alo wbrazil', 'sei la', 'asddasuhhusd']
+    }
+
+
+    adicionaTweet = (infosDoEvento) => {
+        // PREVINE O RECARREGAMENTO DA PAGINA
+        infosDoEvento.preventDefault()
+        const novoTweet = this.state.novoTweet
+        this.setState({
+            tweets: [novoTweet, ...this.state.tweets],
+            novoTweet: ''
+        })
     }
 
   render() {
@@ -26,15 +37,8 @@ class Home extends Component {
         <div className="container">
             <Dashboard>
                 <Widget>
-                    <form className="novoTweet">
+                    <form className="novoTweet" onSubmit={this.adicionaTweet}>
                         <div className="novoTweet__editorArea">
-                        {/* 
-                            ## Desafiozin
-                            - Adicionar a classe "novoTweet__status--invalido"
-                                somente quando o length do novoTweet for maior que 140
-                                caracteres
-                            - Manter a classe css "novoTweet__status"
-                        */}
                             <span className={classNames(
                                 'novoTweet__status',
                                 {
