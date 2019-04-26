@@ -10,11 +10,9 @@ class LoginPage extends Component {
 
     state = {
         values: {},
-        errors: [
-            httpError: ''
-        ]
         login: 'omariosouto',
-        senha: '123456'
+        senha: '123456',
+        errors: {}
     }
 
     onLoginSubmit = (infosDoEvento) => {
@@ -57,6 +55,8 @@ class LoginPage extends Component {
 
 
     render() {
+        console.log(this.props)
+
         return (
             <Fragment>
                 <Cabecalho />

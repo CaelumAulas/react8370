@@ -26,6 +26,11 @@
 
 ==============================
 
+## Dicas pra práticar
+- Recriar coisas comuns de interface web: https://www.felipefialho.com/css-components/#component-collapse
+    - pra tempo use o momment: https://momentjs.com/
+- https://javascript30.com/
+
 ## Começar as coisas
 - Componentes   
     - Performance (comento jaja)
@@ -126,6 +131,7 @@ state = {novaMensagem}
 - Encham de perguntas o leo balter: https://twitter.com/leobalter
     - https://hipsters.tech/evolucao-e-especificacao-do-javascript-moderno/
 - https://www.amazon.com.br/M%C3%ADtico-Homem-M%C3%AAs-Ensaios-Engenharia-Software/dp/8550802530?tag=goog0ef-20&smid=A1ZZFT5FULY4LN&ascsubtag=go_726685122_54292137521_242594579893_aud-519888259198:pla-843361975152_c_
+- Clean Architechture: https://www.youtube.com/watch?v=Nsjsiz2A9mg
 
 ## Softwares como serviço
 - https://sendgrid.com/marketing/sendgrid-services-cro/?extProvId=5&extPu=49397-gaw&extLi=115523862&sem_adg=5147766942&extCr=5147766942-144426643671&extSi=&extTg=&keyword=sendgrid%20com&extAP=1t1&extMT=b&gclid=CjwKCAjw7_rlBRBaEiwAc23rhkV2E61qHT4wN3A-k3A4iKqtiay0Ul8PQ_FAXLtpZmLkHCtfx80ZcRoCD9IQAvD_BwE
@@ -137,6 +143,28 @@ state = {novaMensagem}
 - Formik: formularios complexos é com ele https://github.com/jaredpalmer/formik
 - https://httpstatusdogs.com/
 
+## Dicas pra lidar com backend
+Spring/Node
+
+CRUD [HTTP]
+http://twitelum-api.herokuapp.com/tweets GET (pega todos)
+http://twitelum-api.herokuapp.com/tweets POST (cria um novo)
+http://twitelum-api.herokuapp.com/tweets/id DELETE (apaga por id)
+http://twitelum-api.herokuapp.com/tweets/id PUT/PATCH (atualiza por id)
+
+HATEOAS
+
+http://twitelum-api.herokuapp.com/tweets/id/like LIKE (atualiza por id)
+
+
+- postman pra documentar 
+- pegar pronto do swagger: https://swagger.io/
+
+## Deploy de apps
+- https://lengstorf.com/code/deploy-nodejs-ssl-digitalocean/
+
+
+
 
 ## Dicas de referencias de código
 - https://www.youtube.com/watch?v=xMk2RwdbByM
@@ -146,6 +174,11 @@ state = {novaMensagem}
 - https://www.amazon.com.br/Refactoring-Improving-Existing-Addison-Wesley-Signature-ebook/dp/B07LCM8RG2?tag=goog0ef-20&smid=A18CNA8NWQSYHH&ascsubtag=go_1686871380_65779544836_327582895583_aud-580930410671:pla-581169666159_c_
 - 
 - https://www.google.com.br/search?q=vaughn+vernon+implementando+domain-driven+design&stick=H4sIAAAAAAAAAONgFuLRT9c3NDQuqzQtSy5XAvOMjAzNy8wLi7UEHEtLMvKLQvKd8vOz_fNyKhexGpQllqZn5CmUpRbl5ecpZOYW5KTmpuaVJOal5Cuk5OcmZubpphRllqXmKaSkFmem5wEAPZ8OSmMAAAA&sa=X&ved=2ahUKEwjlw6qPkerhAhUhw1kKHanMBQwQxA0wF3oECAsQBA&biw=1024&bih=689
+
+## Trabalhando com Tipos no Front End
+- Estude java: https://www.caelum.com.br/apostila-java-orientacao-objetos/#null
+- Coloque typescript no projeto: https://facebook.github.io/create-react-app/docs/adding-typescript
+- Depoimentos de um front tbm: https://www.youtube.com/watch?v=DAGKG3KrQgA
 
 <!-- - Front End 
     - Faz tudo 

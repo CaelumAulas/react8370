@@ -7,27 +7,57 @@ import Dashboard from '../components/Dashboard'
 import Widget from '../components/Widget'
 import TrendsArea from '../components/TrendsArea'
 import Tweet from '../components/Tweet'
+import { TweetsAPIService } from '../services/TweetsAPIService';
+
 
 class Home extends Component {
 
     state = {
         novoTweet: 'asduhdhuas',
-        tweets: ['alo alo wbrazil', 'sei la', 'asddasuhhusd']
+        tweets: []
     }
 
+    constructor() {
+        super()
+
+        console.log('constructor')
+    }
+
+    componentDidMount() {
+        console.log('didMount')
+        this.carregaTweets()    
+    }
+
+    carregaTweets() {
+        TweetsAPIService.obterTodos()
+            .then((tweetsVindosDaAPI) => {
+                this.setState({
+                    tweets: tweetsVindosDaAPI
+                })
+            })
+    }
 
     adicionaTweet = (infosDoEvento) => {
-        // PREVINE O RECARREGAMENTO DA PAGINA
         infosDoEvento.preventDefault()
         const novoTweet = this.state.novoTweet
-        this.setState({
-            tweets: [novoTweet, ...this.state.tweets],
-            novoTweet: ''
+
+        if(novoTweet.length > 140 || novoTweet.length === 0) return
+        
+        TweetsAPIService.adiciona(novoTweet)
+        .then((novoTweetObj) => {
+            console.log(novoTweetObj)
+            this.setState({
+                tweets: [novoTweetObj, ...this.state.tweets],
+                novoTweet: ''
+            })
+        })
+        .catch((err) => {
+            alert('Alguma coisa deu errado')
         })
     }
 
   render() {
-      console.log('[render]')
+    console.log('render')
     return (
       <Fragment>
         <Cabecalho>
@@ -81,10 +111,18 @@ class Home extends Component {
                 <Widget>
                     <div className="tweetsArea">
                         {/* Expressions */}
+                        { this.state.tweets.length === 0 ? 'Carregando...' : '' }
                         {
-                            
+                            // Passa e resgata as props do usuario
+                            // Faz um "carregando" enquanto não houverem tweets
+
                             this.state.tweets.map((tweetAtual, indice) => {
-                                return <Tweet key={indice} conteudo={tweetAtual}/>
+                                return <Tweet
+                                    key={indice}
+                                    usuario={tweetAtual.usuario}
+                                    conteudo={tweetAtual.conteudo}
+                                    totalLikes={tweetAtual.totalLikes}
+                                    likeado={tweetAtual.likeado}/>
                             })
                         }
                     </div>
