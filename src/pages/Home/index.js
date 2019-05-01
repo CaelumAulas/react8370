@@ -1,14 +1,16 @@
 import React, { Component, Fragment } from "react";
-import classNames from "classnames";
 
-import Cabecalho from "../components/Cabecalho";
-import NavMenu from "../components/NavMenu";
-import Dashboard from "../components/Dashboard";
-import Widget from "../components/Widget";
-import TrendsArea from "../components/TrendsArea";
-import Tweet from "../components/Tweet";
-import { TweetsAPIService } from "../services/TweetsAPIService";
-import { Modal } from "../components/Modal";
+
+import Cabecalho from "../../components/Cabecalho";
+import NavMenu from "../../components/NavMenu";
+import Dashboard from "../../components/Dashboard";
+import Widget from "../../components/Widget";
+import TrendsArea from "../../components/TrendsArea";
+import Tweet from "../../components/Tweet";
+import { TweetsAPIService } from "../../services/TweetsAPIService";
+import { Modal } from "../../components/Modal";
+import { TweetsActions } from "../../actions/TweetsActions";
+import { NovoTweetFormContainer } from "./components/NovoTweetForm";
 
 class Home extends Component {
   state = {
@@ -17,14 +19,7 @@ class Home extends Component {
     tweetAtivoNoModal: {},
   };
 
-  constructor() {
-    super();
-
-    console.log("constructor");
-  }
-
   componentDidMount() {
-    console.log("didMount");
     this.carregaTweets();
 
     window.store.subscribe(() => {
@@ -34,23 +29,14 @@ class Home extends Component {
     })
   }
 
-  carregaTweets() {
-    TweetsAPIService.obterTodos().then(tweetsVindosDaAPI => {
-      window.store.dispatch({ type: 'CARREGA_TWEETS', tweets: tweetsVindosDaAPI })
-    });
-  }
+  carregaTweets = () => TweetsActions.carrega()
 
   adicionaTweet = infosDoEvento => {
     infosDoEvento.preventDefault();
     const novoTweet = this.state.novoTweet;
-
     if (novoTweet.length > 140 || novoTweet.length === 0) return;
-
-    TweetsAPIService.adiciona(novoTweet)
-      .then(novoTweetObj => {
-        window.store.dispatch({ type: 'ADD_TWEET', tweet: novoTweetObj })
-        this.setState({ novoTweet: '' })
-      })
+    TweetsActions.adiciona(novoTweet)
+      .then(() => this.setState({ novoTweet: '' }))
       .catch(err => {
         alert("Alguma coisa deu errado");
       });
@@ -64,12 +50,10 @@ class Home extends Component {
     });
   };
 
-
   fechaModal = () => this.setState({ tweetAtivoNoModal: {} }) 
 
 
   abreModal = (tweetQueVaiProModal) => {
-    console.log('Alguém clicou na área de conteudo')
     this.setState({
       tweetAtivoNoModal: tweetQueVaiProModal
     }, () => {
@@ -79,7 +63,6 @@ class Home extends Component {
   }
 
   render() {
-    console.log("render");
     return (
       <Fragment>
         <Cabecalho>
@@ -89,45 +72,7 @@ class Home extends Component {
         <div className="container">
           <Dashboard>
             <Widget>
-              <form className="novoTweet" onSubmit={this.adicionaTweet}>
-                <div className="novoTweet__editorArea">
-                  <span
-                    className={classNames("novoTweet__status", {
-                      "novoTweet__status--invalido":
-                        this.state.novoTweet.length > 140
-                    })}
-                  >
-                    {this.state.novoTweet.length}/140
-                  </span>
-                  {/* <span className={`
-                                novoTweet__status
-                                ${
-                                    this.state.novoTweet.length > 140
-                                    ? 'novoTweet__status--invalido'
-                                    : '' 
-                                }
-                                `}>
-                                {this.state.novoTweet.length}/140
-                            </span> */}
-                  <textarea
-                    onChange={infosDoEvento => {
-                      this.setState({
-                        novoTweet: infosDoEvento.target.value
-                      });
-                    }}
-                    value={this.state.novoTweet}
-                    className="novoTweet__editor"
-                    placeholder="O que está acontecendo?"
-                  />
-                </div>
-                <button
-                  disabled={this.state.novoTweet.length > 140}
-                  type="submit"
-                  className="novoTweet__envia"
-                >
-                  Tweetar
-                </button>
-              </form>
+              <NovoTweetFormContainer />
             </Widget>
             <Widget>
               <TrendsArea />

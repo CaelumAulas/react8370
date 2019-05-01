@@ -38,7 +38,6 @@ class LoginPage extends Component {
             this.props.history.push('/')
         })
         .catch((err) => {
-            console.log(err.message)
             this.setState({
                 login: '',
                 senha: ''
@@ -55,7 +54,6 @@ class LoginPage extends Component {
 
 
     render() {
-        console.log(this.props)
 
         return (
             <Fragment>

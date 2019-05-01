@@ -1,10 +1,9 @@
 import { createStore, combineReducers } from 'redux'
 
 
-
 function tweetsReducer(stateDaAplicacao = [], acaoDisparadaPorAlguem) {
-    console.log(acaoDisparadaPorAlguem) // type, idDoTweet
-    console.log('stateDaAplicacao',stateDaAplicacao)
+    console.log('[acaoDisparadaPorAlguem]',acaoDisparadaPorAlguem)
+
     if(acaoDisparadaPorAlguem.type === 'CARREGA_TWEETS') {
         return acaoDisparadaPorAlguem.tweets
     }
@@ -19,6 +18,19 @@ function tweetsReducer(stateDaAplicacao = [], acaoDisparadaPorAlguem) {
         return stateDaAplicacao.filter(tweet => {
             return tweet._id !== idDoTweetQueVaiSumir;
         });
+    }
+
+    if(acaoDisparadaPorAlguem.type === 'LIKE_TWEET') {
+        const idDoTweetClicado = acaoDisparadaPorAlguem.idDoTweet
+        const listaAtualDeTweets = stateDaAplicacao
+        return listaAtualDeTweets.map((tweet) => {
+            if(tweet._id === idDoTweetClicado) {
+                tweet.likeado = true
+                tweet.totalLikes = 1000 
+            }
+
+            return tweet
+        })
     }
 
     return stateDaAplicacao

@@ -7,7 +7,6 @@ import Widget from '../Widget';
 
 export const Modal = ({ children, isOpen, onClose }) => {
     function handleBlackAreaClick(infosDoEvento) {
-        console.log('Alguém clicou no modal!')
         const isModalTag = infosDoEvento.target.classList.contains('modal')
         if(isModalTag) onClose && onClose()
     }

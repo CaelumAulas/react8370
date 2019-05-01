@@ -294,7 +294,17 @@ http://twitelum-api.herokuapp.com/tweets/id/like LIKE (atualiza por id)
 - https://www.udemy.com/git-e-github-para-iniciantes/
 - https://willianjusten.com.br/chamada-curso-git-e-github-na-vida-real/
 - https://hipsters.tech/pull-requests-e-code-review-hipsters-64/
+- Essencial: https://www.youtube.com/watch?v=C18qzn7j4SM&list=PLQCmSnNFVYnRdgxOC_ufH58NxlmM6VYd1
 
+
+## CSS
+- https://cssgridgarden.com/
+- 
+
+
+## Redux Saga
+- https://medium.com/nossa-coletividad/redux-saga-voc%C3%AA-no-controle-das-opera%C3%A7%C3%B5es-ass%C3%ADncronas-71c9e6b3aabc
+- Sigam o eduardo rabello
 
 ## Manipulando Arrays no JavaScripts
 ```js
