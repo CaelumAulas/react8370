@@ -36,7 +36,6 @@
 - Recriar coisas comuns de interface web: https://www.felipefialho.com/css-components/#component-collapse
     - pra tempo use o momment: https://momentjs.com/
 - https://javascript30.com/
-- https://hipsters.tech/pull-requests-e-code-review-hipsters-64/
 
 ## Começar as coisas
 - Componentes   
@@ -184,7 +183,7 @@ http://twitelum-api.herokuapp.com/tweets/id/like LIKE (atualiza por id)
 - 
 - https://www.google.com.br/search?q=vaughn+vernon+implementando+domain-driven+design&stick=H4sIAAAAAAAAAONgFuLRT9c3NDQuqzQtSy5XAvOMjAzNy8wLi7UEHEtLMvKLQvKd8vOz_fNyKhexGpQllqZn5CmUpRbl5ecpZOYW5KTmpuaVJOal5Cuk5OcmZubpphRllqXmKaSkFmem5wEAPZ8OSmMAAAA&sa=X&ved=2ahUKEwjlw6qPkerhAhUhw1kKHanMBQwQxA0wF3oECAsQBA&biw=1024&bih=689
 - Gerando IDs no React: https://www.npmjs.com/package/uuid
-- 
+- https://willianjusten.com.br/analisando-seu-codigo-js-com-linter/
 
 
 ## Empresas com front end referencia
@@ -285,3 +284,53 @@ http://twitelum-api.herokuapp.com/tweets/id/like LIKE (atualiza por id)
 - Não conhecer o suficiente pra defender
 
  -->
+
+
+## Dicas pra vida de JS
+- https://braziljs.org/weekly/
+- https://javascriptweekly.com/
+
+## Dicas de Git e Github
+- https://www.udemy.com/git-e-github-para-iniciantes/
+- https://willianjusten.com.br/chamada-curso-git-e-github-na-vida-real/
+- https://hipsters.tech/pull-requests-e-code-review-hipsters-64/
+
+
+## Manipulando Arrays no JavaScripts
+```js
+// Executa uma função pra cada item de um array
+Array.prototype.forEach = function(funcao) {
+	arrayQueEstamosTrabalhando = this
+
+    for(let i = 0; i < arrayQueEstamosTrabalhando.length; i++) {
+        funcao(arrayQueEstamosTrabalhando[i])
+    }
+}
+
+// Recebe um array e retorna um novo com o mesmo numero de posições
+Array.prototype.map = function(funcao) {
+    arrayQueEstamosTrabalhando = this
+    const novoArray = []
+
+    for(let i = 0; i < arrayQueEstamosTrabalhando.length; i++) {
+        novoArray.push(funcao(arrayQueEstamosTrabalhando[i]))
+    }
+
+    return novoArray
+}
+
+// Executa uma função pra cada item do array
+// Se o retorno da função for true, esse item vai pro array novo
+Array.prototype.filter = function(funcao) {
+    arrayQueEstamosTrabalhando = this
+    const novoArray = []
+
+    for(let i = 0; i < arrayQueEstamosTrabalhando.length; i++) {
+        if(funcao(arrayQueEstamosTrabalhando[i])) {
+            novoArray.push(arrayQueEstamosTrabalhando[i])
+        }
+    }
+    
+    return novoArray
+}
+```

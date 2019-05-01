@@ -15,7 +15,6 @@ class Home extends Component {
     novoTweet: "asduhdhuas",
     tweets: [],
     tweetAtivoNoModal: {},
-    menuAberto: tr
   };
 
   constructor() {
@@ -30,7 +29,7 @@ class Home extends Component {
 
     window.store.subscribe(() => {
       this.setState({
-        tweets: window.store.getState()
+        tweets: window.store.getState().tweets
       })
     })
   }
@@ -49,11 +48,8 @@ class Home extends Component {
 
     TweetsAPIService.adiciona(novoTweet)
       .then(novoTweetObj => {
-        console.log(novoTweetObj);
-        this.setState({
-          tweets: [novoTweetObj, ...this.state.tweets],
-          novoTweet: ""
-        });
+        window.store.dispatch({ type: 'ADD_TWEET', tweet: novoTweetObj })
+        this.setState({ novoTweet: '' })
       })
       .catch(err => {
         alert("Alguma coisa deu errado");
@@ -63,14 +59,8 @@ class Home extends Component {
   removeTweetById = idDoTweetQueVaiSumir => {
     TweetsAPIService.removeById(idDoTweetQueVaiSumir)
     .then(() => {
-      const listaDeTweetsAtualizada = this.state.tweets.filter(tweet => {
-        return tweet._id !== idDoTweetQueVaiSumir;
-      });
-      this.setState({
-        tweets: listaDeTweetsAtualizada
-      }, () => {
-        this.fechaModal()
-      });
+      window.store.dispatch({ type: 'EXCLUIR_TWEET', idDoTweet: idDoTweetQueVaiSumir })
+      this.fechaModal();
     });
   };
 
