@@ -26,10 +26,17 @@
 
 ==============================
 
+## Sobre o redux
+- https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367
+- https://medium.com/@oieduardorabelo/twitter-lite-alta-performance-com-react-e-progressive-web-apps-em-escala-2755e0908728
+- https://medium.com/statuscode/dissecting-twitters-redux-store-d7280b62c6b1
+
+
 ## Dicas pra práticar
 - Recriar coisas comuns de interface web: https://www.felipefialho.com/css-components/#component-collapse
     - pra tempo use o momment: https://momentjs.com/
 - https://javascript30.com/
+- https://hipsters.tech/pull-requests-e-code-review-hipsters-64/
 
 ## Começar as coisas
 - Componentes   
@@ -126,6 +133,7 @@ state = {novaMensagem}
         - é um objeto que o react manipula antes de atualizar o document de verdade
 - Angular usa o Monkey Patch: https://medium.com/reverse-engineering-angular/angular-deep-dive-zone-js-how-does-it-monkey-patches-various-apis-9cc1c7fcc321
 
+
 ## Livros
 - Série you don't know JS: https://www.google.com.br/search?q=you+dont+know+js&oq=you+dont+know+js&aqs=chrome..69i57j0l5.1955j0j9&sourceid=chrome&ie=UTF-8
 - Encham de perguntas o leo balter: https://twitter.com/leobalter
@@ -167,6 +175,7 @@ http://twitelum-api.herokuapp.com/tweets/id/like LIKE (atualiza por id)
 
 
 ## Dicas de referencias de código
+- Como não se preocupar com a performance do browser: https://www.youtube.com/watch?v=i3LRWERf74Mß
 - https://www.youtube.com/watch?v=xMk2RwdbByM
 - Clean Code
     - 
@@ -174,6 +183,17 @@ http://twitelum-api.herokuapp.com/tweets/id/like LIKE (atualiza por id)
 - https://www.amazon.com.br/Refactoring-Improving-Existing-Addison-Wesley-Signature-ebook/dp/B07LCM8RG2?tag=goog0ef-20&smid=A18CNA8NWQSYHH&ascsubtag=go_1686871380_65779544836_327582895583_aud-580930410671:pla-581169666159_c_
 - 
 - https://www.google.com.br/search?q=vaughn+vernon+implementando+domain-driven+design&stick=H4sIAAAAAAAAAONgFuLRT9c3NDQuqzQtSy5XAvOMjAzNy8wLi7UEHEtLMvKLQvKd8vOz_fNyKhexGpQllqZn5CmUpRbl5ecpZOYW5KTmpuaVJOal5Cuk5OcmZubpphRllqXmKaSkFmem5wEAPZ8OSmMAAAA&sa=X&ved=2ahUKEwjlw6qPkerhAhUhw1kKHanMBQwQxA0wF3oECAsQBA&biw=1024&bih=689
+- Gerando IDs no React: https://www.npmjs.com/package/uuid
+- 
+
+
+## Empresas com front end referencia
+- https://www.heroku.com/
+
+## Acessibilidade com a talita pagani
+- https://www.youtube.com/watch?v=4URTZHk6tz0
+- https://www.youtube.com/watch?v=igGOeem6y4w
+- Simulador de deficiencias visuais: https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl
 
 ## Trabalhando com Tipos no Front End
 - Estude java: https://www.caelum.com.br/apostila-java-orientacao-objetos/#null

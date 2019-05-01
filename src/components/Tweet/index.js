@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { TweetsAPIService } from '../../services/TweetsAPIService'
+import PropTypes from 'prop-types' // npm install --save prop-types
 import classNames from 'classnames'
 import './tweet.css'
 
@@ -7,17 +9,30 @@ class Tweet extends Component {
         totalLikes: this.props.totalLikes,
         likeado: this.props.likeado
     }
+
     handleLike = () => {
+        console.log(window)
         const { totalLikes, likeado } = this.state
         this.setState({
             totalLikes: likeado ? totalLikes - 1 : totalLikes + 1,
             likeado: !likeado
+        }, () => {
+            TweetsAPIService.like(this.props.id)
         })        
-        // Enviar pra API 
-        // TweetsAPIService.like(id)
+    }
+
+    removeHandler = () => {
+        console.log('Devemos na teoria, apagar esse tweet', this.props.id)
+        // Façam o teste de bloquear o botão remove
+        this.props.onRemove && this.props.onRemove()
+    }
+
+    handleContentAreaClick = () => {
+        this.props.onContentAreaClick && this.props.onContentAreaClick()
     }
 
     render() {
+        
         return (
             <article className="tweet">
                 <div className="tweet__cabecalho">
@@ -25,7 +40,7 @@ class Tweet extends Component {
                     <span className="tweet__nomeUsuario">{this.props.usuario.nome}</span>
                     <a href="/"><span className="tweet__userName">@{this.props.usuario.login}</span></a>
                 </div>
-                <p className="tweet__conteudo">
+                <p onClick={this.handleContentAreaClick} className="tweet__conteudo">
                     { this.props.conteudo }
                 </p>
                 <footer className="tweet__footer">
@@ -40,10 +55,40 @@ class Tweet extends Component {
                         </svg>
                         {this.state.totalLikes}
                     </button>
+
+                    {
+                         // Curto Circuito - Renderização condicional
+                        this.props.removivel && (
+                            <button onClick={this.removeHandler} className="btn btn--blue btn--remove">
+                                X
+                            </button>
+                        )
+                    }
+
+                    
                 </footer>
             </article>
         )
     }
+}
+
+Tweet.defaultProps = {
+    usuario: {},
+    likeado: false
+}
+
+Tweet.propTypes = {
+    removivel: PropTypes.bool,
+    totalLikes: PropTypes.number.isRequired,
+    likeado: PropTypes.bool.isRequired,
+    id: PropTypes.string.isRequired,
+    usuario: PropTypes.shape({
+        foto: PropTypes.string,
+        login: PropTypes.string,
+        nome: PropTypes.string,
+    }),
+    conteudo: PropTypes.string,
+    onRemove: PropTypes.func
 }
 
 export default Tweet

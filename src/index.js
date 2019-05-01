@@ -14,11 +14,11 @@ import './assets/css/novoTweet.css'
 
 
 import registerServiceWorker from './registerServiceWorker';
-
-
 // [Coisas do roteamento]
 import { BrowserRouter } from 'react-router-dom'
 import Routes from './routes';
+import './store'
+
 ReactDOM.render(
     <BrowserRouter>
         <Routes />
