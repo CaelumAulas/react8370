@@ -344,3 +344,26 @@ Array.prototype.filter = function(funcao) {
     return novoArray
 }
 ```
+\
+
+
+
+## Performance
+- https://www.youtube.com/watch?v=EMCBd3kw4zs
+- https://wpostats.com/2015/10/29/amazon-1-percent.html
+- 
+
+
+## Documentação/Design System
+- https://www.docz.site/
+- https://storybook.js.org
+
+
+## Deploy
+- https://blog.caelum.com.br/como-preparar-uma-aplicacao-react-para-o-deploy/
+- https://medium.com/@samanbaboli/how-to-load-balancing-nodejs-apps-using-nginx-a3b4ceb7c782
+- https://www.heroku.com/
+- 
+
+## Assita com calma
+- https://www.youtube.com/user/AkitaOnRails/videos
