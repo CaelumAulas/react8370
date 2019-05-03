@@ -10,9 +10,9 @@ class LoginPage extends Component {
 
     state = {
         values: {},
+        errors: {},
         login: 'omariosouto',
         senha: '123456',
-        errors: {}
     }
 
     onLoginSubmit = (infosDoEvento) => {

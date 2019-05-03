@@ -1,31 +1,16 @@
 import React, { Component } from 'react'
-import { TweetsAPIService } from '../../services/TweetsAPIService'
+import { TweetsActions } from '../../actions/TweetsActions'
 import PropTypes from 'prop-types' // npm install --save prop-types
 import classNames from 'classnames'
 import './tweet.css'
 
 class Tweet extends Component {
-
+    // Quem quiser, cria o container Component do Tweet
     handleLike = () => {
-        window.store.dispatch({ type: 'LIKE_TWEET', idDoTweet: this.props.id })
-        // const { totalLikes, likeado } = this.state
-        // this.setState({
-        //     totalLikes: likeado ? totalLikes - 1 : totalLikes + 1,
-        //     likeado: !likeado
-        // }, () => {
-        //     TweetsAPIService.like(this.props.id)
-        // })        
+    TweetsActions.like(this.props.id)  
     }
-
-    removeHandler = () => {
-
-        // Façam o teste de bloquear o botão remove
-        this.props.onRemove && this.props.onRemove()
-    }
-
-    handleContentAreaClick = () => {
-        this.props.onContentAreaClick && this.props.onContentAreaClick()
-    }
+    removeHandler = () => this.props.onRemove && this.props.onRemove()
+    handleContentAreaClick = () => this.props.onContentAreaClick && this.props.onContentAreaClick()
 
     render() {
         

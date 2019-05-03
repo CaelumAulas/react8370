@@ -11,6 +11,7 @@ import { TweetsAPIService } from "../../services/TweetsAPIService";
 import { Modal } from "../../components/Modal";
 import { TweetsActions } from "../../actions/TweetsActions";
 import { NovoTweetFormContainer } from "./components/NovoTweetForm";
+import { Notificacao } from "../../components/Notificacao";
 
 class Home extends Component {
   state = {
@@ -45,6 +46,7 @@ class Home extends Component {
   removeTweetById = idDoTweetQueVaiSumir => {
     TweetsAPIService.removeById(idDoTweetQueVaiSumir)
     .then(() => {
+      window.store.dispatch({ type: 'NOTIFICACAO_ADD', msg: 'Tweet excluido com sucessinhos!' })
       window.store.dispatch({ type: 'EXCLUIR_TWEET', idDoTweet: idDoTweetQueVaiSumir })
       this.fechaModal();
     });
@@ -121,6 +123,7 @@ class Home extends Component {
             }
         </Modal>
 
+        <Notificacao />
 
       </Fragment>
     );

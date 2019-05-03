@@ -1,8 +1,9 @@
 import { TweetsAPIService } from "../services/TweetsAPIService";
 
+const CARREGA_TWEETS = 'CARREGA_TWEETS'
 
 const carregaAction = (tweetsVindosDaAPI) => { // Action Pura
-    return { type: 'CARREGA_TWEETS', tweets: tweetsVindosDaAPI }
+    return { type: CARREGA_TWEETS, tweets: tweetsVindosDaAPI }
 }
 
 export const TweetsActions = {
@@ -15,6 +16,14 @@ export const TweetsActions = {
         return TweetsAPIService.adiciona(novoTweet)
             .then(novoTweetObj => {
                 window.store.dispatch({ type: 'ADD_TWEET', tweet: novoTweetObj })
+            })
+    },
+    like: (tweetId) => {
+        window.store.dispatch({ type: 'LIKE_TWEET', idDoTweet: tweetId })
+
+        return TweetsAPIService.like(tweetId)
+            .then(() => {
+                console.log('Foi pro server')
             })
     }
 }

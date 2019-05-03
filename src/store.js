@@ -2,8 +2,6 @@ import { createStore, combineReducers } from 'redux'
 
 
 function tweetsReducer(stateDaAplicacao = [], acaoDisparadaPorAlguem) {
-    console.log('[acaoDisparadaPorAlguem]',acaoDisparadaPorAlguem)
-
     if(acaoDisparadaPorAlguem.type === 'CARREGA_TWEETS') {
         return acaoDisparadaPorAlguem.tweets
     }
@@ -25,10 +23,9 @@ function tweetsReducer(stateDaAplicacao = [], acaoDisparadaPorAlguem) {
         const listaAtualDeTweets = stateDaAplicacao
         return listaAtualDeTweets.map((tweet) => {
             if(tweet._id === idDoTweetClicado) {
-                tweet.likeado = true
-                tweet.totalLikes = 1000 
+                tweet.totalLikes = tweet.likeado ? tweet.totalLikes - 1 : tweet.totalLikes + 1
+                tweet.likeado = !tweet.likeado
             }
-
             return tweet
         })
     }
@@ -36,8 +33,23 @@ function tweetsReducer(stateDaAplicacao = [], acaoDisparadaPorAlguem) {
     return stateDaAplicacao
 }
 
+function notificacaoReducer(state = '', action) {
+    console.log('[acaoDisparadaPorAlguem]',action)
+
+    if(action.type === 'NOTIFICACAO_ADD') {
+        return action.msg
+    }
+
+    if(action.type === 'NOTIFICACAO_REMOVE') {
+        return ''
+    }
+
+    return state
+}
+
 export const store = createStore(combineReducers({
-    tweets: tweetsReducer
+    tweets: tweetsReducer,
+    notificacao: notificacaoReducer
 }))
 window.store = store
 
